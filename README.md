@@ -17,8 +17,13 @@ This is a Hyprland-style workaround (there is no native minimize). It is reliabl
 - uninstall.sh – removes binds + taskbar and deletes scripts + disables service
 
 ## Install
-bash
-./install.sh
+git clone https://github.com/skibidiandulka/omarchy-minimize-window.git
+  cd omarchy-minimize-window
+  ./install.sh
+
+  You need to start the service (Only the first time after installation):
+    systemctl --user daemon-reload
+    systemctl --user enable --now omarchy-minimize-listener.service
 
 Then restart Hyprland and Waybar (or reload their configs).
 
