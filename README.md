@@ -49,6 +49,4 @@ json
   "tooltip": true
 }
 
-
-
-<Written by codex on Thursday-05-February-2026> 
+"I have created all of this- including the README.md with codex ai on the fifth of February 2026." 
