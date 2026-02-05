@@ -1,0 +1,13 @@
+[Unit]
+Description=Omarchy minimize listener (restore on taskbar click)
+After=graphical-session.target
+Wants=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/omarchy-minimize-listener.sh
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=default.target
