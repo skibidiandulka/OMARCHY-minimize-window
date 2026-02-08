@@ -29,9 +29,9 @@ Then restart Hyprland and Waybar (or reload their configs).
 
 ## Service
 The listener runs as a systemd user service:
+
 bash
 systemctl --user status omarchy-minimize-listener.service
-
 
 ## Uninstall
 bash
@@ -53,5 +53,19 @@ json
   "icon-size": 14,
   "tooltip": true
 }
+
+## Icons
+If you have problem with custom icons. (For example whatsapp running in web and showing the chrome logo.)
+- First open the app like WhatsApp
+- Then run:  
+```
+hyprctl clients -j | jq -r '.[] | "\(.address)  \(.class)  \(.title)"' | rg -i 'whatsapp'
+```
+- And find the calss of your webapp for example: *chrome-web.whatsapp.com__-Default*
+- Make sure you have the "launcher" .desktop file with the correct icon like: 
+```
+rg -n '^(Name|Exec|Icon)=' ~/.local/share/applications/WhatsApp.desktop
+```
+
 
 "I have created all of this- including the README.md with codex ai on the fifth of February 2026." 
