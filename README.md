@@ -66,6 +66,27 @@ hyprctl clients -j | jq -r '.[] | "\(.address)  \(.class)  \(.title)"' | rg -i '
 ```
 rg -n '^(Name|Exec|Icon)=' ~/.local/share/applications/WhatsApp.desktop
 ```
-
+- for every class create a hidden mapping .desktop entry with the same name as the class. Put the file in to ~/.local/share/applications/
+- set Icon= for the correct PNG
+- set NoDisplay=True
+Example for whatsapp:
+```
+  cat > ~/.local/share/applications/chrome-web.whatsapp.com__-Default.desktop <<'EOF'
+  [Desktop Entry]
+  Version=1.0
+  Type=Application
+  Name=WhatsApp (Taskbar)
+  Exec=omarchy-launch-webapp https://web.whatsapp.com/
+  Terminal=false
+  Icon=/home/dadamnew/.local/share/applications/icons/WhatsApp.png
+  NoDisplay=true
+  StartupNotify=true
+  EOF
+```
+- refresh the database and waybar:
+```
+  update-desktop-database ~/.local/share/applications 2>/dev/null || true
+  omarchy-restart-waybar
+```
 
 "I have created all of this- including the README.md with codex ai on the fifth of February 2026." 
