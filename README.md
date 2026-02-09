@@ -17,9 +17,17 @@ This is a Hyprland-style workaround (there is no native minimize). It is reliabl
 - uninstall.sh – removes binds + taskbar and deletes scripts + disables service
 
 ## Install
+
+first install socat then: 
+```
 git clone https://github.com/skibidiandulka/omarchy-minimize-window.git
-  cd omarchy-minimize-window
-  ./install.sh
+```
+```
+cd omarchy-minimize-window
+```
+```
+bash install.sh
+```
 
   You need to start the service (Only the first time after installation):
     systemctl --user daemon-reload
